@@ -14,7 +14,7 @@ services:
     #links:
     #  - osrm-backend-db
     ports:
-      - "5000:5000"
+      - "8585:5000"
     volumes:
       - ${OSRM_BACKEND_HOME}/data:/data
       - /etc/localtime:/etc/localtime:ro
@@ -60,7 +60,7 @@ services:
     # FIXME https://github.com/Project-OSRM/osrm-frontend/issues/278
     #command: npm run start-prod
     ports:
-      - "8080:9966"
+      - "8586:9966"
     depends_on:
       osrm-backend:
         condition: service_started
